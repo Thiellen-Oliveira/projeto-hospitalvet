@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Hospital Veterinário</title>
+        <h:outputStylesheet name="css/estilo.css"/>
+    </h:head>
+    <h:body > 
+        <h:form>
+            <h:panelGrid columns="2">
+
+                <h:outputLabel value="Login: " />
+                <p:inputText value="#{indexControle.usuario.login}"
+                             onblur="converter()"/>
+
+
+
+                <h:outputLabel value="Senha: " />
+                <p:password value="#{indexControle.usuario.senha}"/>
+
+
+                <p:commandButton value="Entrar" styleClass="botao" 
+                                 action="#{indexControle.autenticar()}"
+                                 update="@form" />
+                <!--p:commandButton value="Entrar" styleClass="botao" action="menu"/-->
+            </h:panelGrid>
+            <p:messages showIcon="false" closable="true" />
+        </h:form>     
+    </h:body>
+</html>
